@@ -42,7 +42,7 @@ $name ="BS";
 				</form>
 			</div>
 			<div class="col-md-4" style="width: 24%;">
-				<div id="cart" style="font-size: 28px;margin-top: 24px;"><a class="text" href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> (<?php
+				<div id="cart" style="font-size: 28px;margin-top: 14px;"><a class="text" href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> (<?php
 			//Gio Hang
             $ok=1;
 			 if(isset($_SESSION['cart']))
@@ -69,7 +69,7 @@ $name ="BS";
 			?>)</a></div>
 			</div>
 		    <div class="col-md-4"style="width: 7%;">
-				<div id="favorite" style="font-size: 28px;margin-top: 24px;"><a class="text" href="favorite.php"><span class="glyphicon glyphicon-heart"></span> (<?php
+				<div id="favorite" style="font-size: 28px;margin-top: 14px;"><a class="text" href="favorite.php"><span class="glyphicon glyphicon-heart"></span> (<?php
 			//Yeu Thich
             $ok=1;
 			 if(isset($_SESSION['favorite']))
