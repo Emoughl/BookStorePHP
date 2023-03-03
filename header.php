@@ -33,7 +33,7 @@ $name ="BS";
 <header class="container">
 		<div class="row" style="margin-right: -150px;margin-left: -150px;">
 			<div class="col-md-4" style="margin-bottom:25px">
-				<div id="logo"><h5 style="font-family: cursive;font-size: 40px;">BOOK STORE</h5></div>
+				<div id="logo"><h5 style="font-family: cursive;font-size: 40px;">HML STORE</h5></div>
 			</div>
 			<div class="col-md-4">
 				<form class="form-search" method="GET" action="timkiem.php">  
