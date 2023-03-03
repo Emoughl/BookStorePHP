@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect("localhost","root","","bookstore");
+$conn=mysqli_connect("localhost:1207","root","","bookstore");
 // Kiem tra ket noi
 if ($conn->connect_error)
   {
