@@ -1,5 +1,5 @@
 <div class="row">
-			<div class="col-lg-12">
+	<div class="col-lg-12">
 				<div class="heading"><h2>Sản phẩm mới nhất</h2></div>
 
 				<div class="products">

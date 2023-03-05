@@ -1,17 +1,21 @@
-<?php
-ob_start();
-session_start();
- ?>
+<head>
 
-<?php 
-	include "frist.php"
-    ?>
-    <?php 
-	include "header.php"
-	?>
-	<?php 
-	include "navigation.php"
-	?>
+<title>Đăng Nhập</title>
+
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="Existing Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- Style --> <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+
+<!-- Fonts -->
+<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+
+</head>
 	<?php
 $tk = "" ;
 $mk = "" ;
@@ -40,102 +44,38 @@ if(isset($_POST['submit']))
     }
 }
 ?>
-<?php
-$name = "" ;
-$email = "" ;
-$dt= "";
-$mk= "";
-$kqdk ="";
-$repass ="";
+	<h1>ĐĂNG NHẬP TÀI KHOẢN NGƯỜI DÙNG</h1>
 
-if(isset($_POST['dangky']))
-{
-    require 'inc/myconnect.php';
-    $name  = $_POST['fullname'] ;
-    $email = $_POST['email'];
-    $dt = $_POST['phone'];
-    $mk = $_POST['password'];
-    $repass = $_POST['repass'];
-    if($repass != $mk  )
-    {
-        $kqdk = "Mật khẩu nhập lại không chính xác";
-    }
-    else
-    {
-        $sql="INSERT INTO  user (Email,Matkhau,Hoten,Sodienthoai) 
-        VALUES ('$email','$mk' ,'$name','$dt') ";
-        // echo  $mk;
-        if (mysqli_query($conn, $sql)) {
-            $name = "" ;
-            $email = "" ;
-            $dt= "";
-            $mk= "";
-            $repass ="";
-            $kqdk = "Đăng ký thành công";
-        } else {
-            $kqdk = "Đăng ký không thành công xin hay kiểm tra lại thông tin";
-        }
-    }
-
-    
-    mysqli_close($conn);
-}
-?>
-	<div id="page-content" class="single-page">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<ul class="breadcrumb">
-						<li><a href="index.php">Home</a></li>
-						<li><a href="account.php">Account</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="heading"><h2>Đăng nhập</h2></div>
-					<form name="form1" id="ff1" method="POST" action="#">
-						<div class="form-group">
-							<input type="email" class="form-control" placeholder="Email" name="txtus" required value="">
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Mật khẫu" name="txtem"required value="">
-						</div>
-						<button type="submit" name="submit" class="btn btn-1" name="login" id="login">Đăng nhập</button>
-						<P style="color:red"><?php echo $kq; ?></p>
-						<a href="#"></a>
-						<br>
-					<i>* Bạn chưa có tài khoản? Vui lòng đăng ký.</i>
-					</form>
-				</div>
-				<div class="col-md-6">
-					<div class="heading"><h2> Đăng ký tài khoản</h2></div>
-					<form name="form2" id="ff2" method="post" action="#">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Họ Tên" name="fullname" id="firstname" value="<?php echo $name;?>" required >
-						</div>
-						<div class="form-group">
-							<input type="email" class="form-control" placeholder="Email" name="email" id="email"  value="<?php echo $email;?>" required>
-						</div>
-						<div class="form-group">
-						<input type="number" class="form-control" placeholder="Điện thoại" name="phone" id="phone" value="<?php echo $dt;?>" required >
-						</div>
-						<div class="form-group">
-						<input type="password" class="form-control" placeholder="Mật khẩu" name="password" id="password"  value="<?php echo $mk;?>"required >
-						</div>
-						<div class="form-group">
-						<input type="password" class="form-control" placeholder="Mật khẩu nhập lại" name="repass" id="repass" value="<?php echo $repass;?>" required >
-						</div>
-						<button type="submit" name="dangky" class="btn btn-1">Đăng kí</button>
-						<P style="color:red"><?php echo $kqdk; ?></p>
-					</form>
-				</div>
-			</div>
+<div class="w3layoutscontaineragileits">
+<h2>ĐĂNG NHẬP</h2>
+	<form action="#" method="post">
+		<input type="email" Name="Username" placeholder="Email" name="txtus" required="">
+		<input type="password" Name="Password" placeholder="Mật khẩu" name="txtem" required="">
+		<div class="aitssendbuttonw3ls">
+			<button type="submit" name="submit" class="btn btn-1" name="login" id="login" style="font-size: 25px;border-radius: 20px;background: url();color: snow;">Đăng nhập</button>
+			<P style="color:red"><?php echo $kq; ?></p>
+			<a href="#"></a>
+			<p style="font-size: 15px"> Bạn chưa có tài khoản? Vui lòng đăng ký. <span>→</span> <a class="w3_play_icon1" href="signup.php"> Tại Đây</a></p>
+			<div class="clear"></div>
 		</div>
-	</div>
-	<?php 
-	include "footer.php"
-	?>
+	</form>
+</div>
+	<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+	$('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
+		type: 'inline',
+		fixedContentPos: false,
+		fixedBgPos: true,
+		overflowY: 'auto',
+		closeBtnInside: true,
+		preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
+	});
+																	
+	});
+</script>
 </body>
 </html>
-<?php ob_end_flush(); ?>
