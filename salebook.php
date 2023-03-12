@@ -13,9 +13,9 @@ require 'inc/truyvan.php';
 			<div class="caption">
 				<div class="name"><h3><a href="product.php?id=<?php echo $row["ID"]?>"><?php echo $row["Ten"]?></a></h3></div>
 <?php
-    if($row["Khuyenmai"] == true){                                      
+    if($row["KhuyenMai"] == true){                                      
 ?>
-	<div class="price" style="color: red;"><?php echo $row["Giakhuyenmai"]?>,000₫<span style="font-size: 14px;"><?php echo $row["Gia"]?>,000₫</span></div>
+	<div class="price" style="color: red;"><?php echo $row["giakhuyenmai"]?>,000₫<span style="font-size: 14px;"><?php echo $row["Gia"]?>,000₫</span></div>
 <?php 
 	}
 ?>
