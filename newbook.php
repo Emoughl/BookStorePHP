@@ -14,7 +14,7 @@
 					}					   
 					$offset =1;
 					$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-					$limit = 4;
+					$limit = 8;
 					$total_page = ceil($total_records / $limit);
 					if ($current_page > $total_page){
 						$current_page = $total_page;

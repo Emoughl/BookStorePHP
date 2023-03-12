@@ -4,8 +4,8 @@
 			<div class="products">
 <?php
 require 'inc/truyvan.php';
-   if ($result->num_rows > 0) {
-	   while($row = $result->fetch_assoc()) {
+if ($result->num_rows > 0) {
+while($row = $result->fetch_assoc()) {
 ?>
 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 	<div class="product">
