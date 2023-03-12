@@ -36,7 +36,7 @@ ob_start();
 							   }					   
 							   $offset =1;
 							   $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-							   $limit = 9;
+							   $limit = 3;
 							   $total_page = ceil($total_records / $limit);
 							   if ($current_page > $total_page){
 								   $current_page = $total_page;
@@ -81,7 +81,7 @@ ob_start();
 			<?php
 			if($i != $current_page){
 			 ?>	
-			 	  <li><?php echo '<a href="kind.php?manhasx='.$manhasx.'&page='.$i.'">'.$i.'</a> '; ?></li>
+			 	  <li><?php echo '<a href="nxb.php?manhasx='.$manhasx.'&page='.$i.'">'.$i.'</a> '; ?></li>
 			 <?php
 			}
 			  ?>	
