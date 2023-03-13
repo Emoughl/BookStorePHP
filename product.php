@@ -56,8 +56,8 @@ if(isset($_POST['submit']))
 								<div class="info">
 									<ul>
 										<li>Tác giả: <b><?php echo $row["tacgia"]?></b></li>
-                                        <li>Thể Loại: <a href="/kind.php?Matheloai=<?php echo $row["Matheloai"]?>"><?php echo $row["Tentheloai"]?></a> <h3></li>
-										<li>Nhà xuất bản: <a href="/nxb.php?manhasx=<?php echo $row["Manhasx"]?>"><?php echo $row["Tennhasx"]?></a> <h3></li>
+                                        <li>Thể Loại: <a href="/BookStorePHP/kind.php?Matheloai=<?php echo $row["Matheloai"]?>"><?php echo $row["Tentheloai"]?></a> <h3></li>
+										<li>Nhà xuất bản: <a href="/BookStorePHP/nxb.php?manhasx=<?php echo $row["Manhasx"]?>"><?php echo $row["Tennhasx"]?></a> <h3></li>
 									</ul>
 								</div>
 								<?php
@@ -99,7 +99,7 @@ if(isset($_POST['submit']))
           <h4 class="modal-title" style="text-align: center">Thông tin khách hàng</h4>
         </div>
         <div class="modal-body"style="margin-top: 40px;">
-		<form name="form6" id="ff6" method="POST" action="<?php include "luumuangay.php" ?>"style="margin-left: 40px;width: 400px;">
+		<form name="form6" id="ff6" method="POST" action="<?php include "saveproduct.php" ?>"style="margin-left: 40px;width: 400px;">
 		<div class="form-group">
 		<input type="text" class="form-control" placeholder="Tên:" name="name" id="name" required>
 		</div>
