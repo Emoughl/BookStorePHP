@@ -1,4 +1,7 @@
 <?php 
+	include "login.php"
+	?>
+<?php 
 	include "frist.php"
     ?>
     <?php 
@@ -10,8 +13,7 @@
     <?php
     include "sider.php"
     ?>
-    				
-			<?php 
+    <?php 
 	include "salebook.php"
 	?>
 	<?php

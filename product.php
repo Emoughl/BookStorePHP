@@ -35,7 +35,7 @@ if(isset($_POST['submit']))
             $sl=1;
         }
         $_SESSION['cart'][$idsp] = $sl;
-        echo "<script>window.location.replace('http://host2.org/cart.php'); </script>";
+        echo "<script>history.go(-1);</script>";
 
 }
 ?>
@@ -64,7 +64,7 @@ if(isset($_POST['submit']))
                                  if($row["KhuyenMai"] == true)
 								 {                                      
 								?>
-									<div class="price"><?php echo $row["giakhuyenmai"]?>.000 VNĐ<span><?php echo $row["Gia"]?>.000 VNĐ</span></div>
+									<div class="price">Giá : <?php echo $row["giakhuyenmai"]?>.000 VNĐ<span><?php echo $row["Gia"]?>.000 VNĐ</span></div>
 								<?php 
 								}
 								?>
@@ -73,7 +73,7 @@ if(isset($_POST['submit']))
 								 {
 								?>
 								    <p style="color:red">Không có khuyến mãi</p>
-									<div class="price"><?php echo $row["Gia"]?>.000 VNĐ<span></span></div>
+									<div class="price">Giá : <?php echo $row["Gia"]?>.000 VNĐ<span></span></div>
 								<?php 
 								}
 								?>
@@ -81,7 +81,7 @@ if(isset($_POST['submit']))
 								<div style="margin-top: 50px;">
 								<form name="form3" id="ff3" method="POST" action="">
 								<input type="submit" name="submit" id="add-to-cart" class="btn btn-2" value="Thêm vào giỏ hàng" />
-								<a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal">Mua ngay</a>
+								
 								<input type="hidden" name="acction" value="them vao gio hang" />
 								<input type="hidden" name="idsp" value="<?php echo $row["ID"] ?>" />
 								</form>
@@ -90,53 +90,6 @@ if(isset($_POST['submit']))
 								
 								<div class="modal fade" id="myModal" role="dialog">
 							
-    <div class="modal-dialog">
-    
-      <!--Thanh Toán-->
-      <div class="modal-content"style="background: cadetblue;">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" style="text-align: center">Thông tin khách hàng</h4>
-        </div>
-        <div class="modal-body"style="margin-top: 40px;">
-		<form name="form6" id="ff6" method="POST" action="<?php include "saveproduct.php" ?>"style="margin-left: 40px;width: 400px;">
-		<div class="form-group">
-		<input type="text" class="form-control" placeholder="Tên:" name="name" id="name" required>
-		</div>
-			<div class="form-group">
-				<input type="email" class="form-control" placeholder="Email :" name="email" id="email" required>
-				</div>
-				<div class="form-group">
-					<input type="tel" class="form-control" placeholder="Số Điện thoại :" name="phone" id="phone" required>
-				</div>
-				<div class="form-group">
-				<input type="text" class="form-control" placeholder="Địa chỉ :" name="txtdiachi" id="txtdiachi" required>
-                </div>
-				<div class="form-group">
-					<input type="number" class="form-control" placeholder="Số lượng:" name="txtsoluong" id="txtsoluong" required>
-				</div>
-				<div class="form-group">
-				<label><input type="date" class="form-control" placeholder="Ngày giao  :" name="date" id="datechoose"  required ></label>
-			</div>
-			<div class="form-group"style="color: red;">
-			<label> Hình thức thanh toán :<select class="selectpicker" name="hinhthuctt">
-    			<option value="ATM">Trả thẻ</option>
-    				<option value="Live">Trực tiếp</option>
-  						</optgroup>
-					</select>
-					</lable>
-			</div>
-				<input type="hidden" name="idsp" value="<?php echo $row["ID"] ?>" />
-				<input type="hidden" name="gia" value="<?php echo $row["Gia"] ?>" />
-			<button type="submit" name="muangay"  class="btn btn-1">Đặt hàng</button>
-		</form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-        </div>
-      </div>
-      
-    </div>
   </div>
 	</div>
 		</div>

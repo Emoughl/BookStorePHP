@@ -63,11 +63,11 @@ ob_start();
 				{
 					$item[]=$key;
 				}
-				// echo $item;
 				$str= implode(",",$item);
-			    $query = "SELECT s.ID,s.Ten,s.date,s.Gia,s.HinhAnh,s.KhuyenMai,s.giakhuyenmai,s.Mota, n.Ten as Tennhasx,s.Manhasx
+			    $query = "SELECT s.ID,s.Ten,s.date,s.Gia,s.HinhAnh,s.KhuyenMai,s.giakhuyenmai,s.Mota, n.Ten as Tennhasx,s.Manhasx , l.Ten as Tentheloai,s.Matheloai	
 				from sanpham s 
 				LEFT JOIN nhaxuatban n on n.ID = s.Manhasx
+				LEFT JOIN theloai l on l.ID = s.Matheloai
 				 WHERE  s.id  in ($str)";
 				$result = $conn->query($query);
 				$total=0;
@@ -90,6 +90,9 @@ ob_start();
 								<ul>
 									<li>Nhà xuất bản: <?php  echo $s["Tennhasx"]?></li>
 								</ul>
+								<ul>
+									<li>Thể Loại <?php  echo $s["Tentheloai"]?></li>
+								</ul>
 							</div>
 							<?php
                                  if($s["KhuyenMai"] == true)
@@ -111,10 +114,10 @@ ob_start();
 							<label>Số lượng: </label> 
 							<input class="form-inline quantity" style="margin-right: 80px;width:50px" min="1" max ="99" type="number" name ="qty[<?php echo $s["ID"] ?>]" value="<?php echo $_SESSION['cart'][$s["ID"]]?>"> 
 						     <div>
-								<input type="submit" name="update" style="margin-top:31px"  value="cập nhật Sách này" class="btn btn-2" />
+								<input type="submit" name="update" style="margin-top:31px"  value="Cập Nhật" class="btn btn-2" style="color: unset;"/>
 							</div>
 							<hr>
-							<input type="submit" name="remove" value="xóa Sách này" class="btn btn-default pull-right" />	
+							<input type="submit" name="remove" value="Xóa Sách" class="btn btn-default pull-right" style="color: unset;" />	
 							<input type="hidden" name="idsprm" value="<?php echo $s["ID"] ?>" />
 							<?php
                                  if($s["KhuyenMai"] == true)
@@ -167,7 +170,7 @@ ob_start();
 			?>
 				
 			<div class="row">
-			<a href="rmcart.php" class="btn btn-2" style="margin-bottom:31px">Xóa hết giỏ hàng</a>
+			<a href="rmcart.php" class="btn btn-2" style="margin-bottom:31px">Xóa hết trong giỏ hàng</a>
 				<div class="col-md-4 col-md-offset-8 ">
 					<center><a href="index.php" class="btn btn-1" style="margin-left:-76px">Chọn những sách khác</a></center>
 				</div>
@@ -185,7 +188,7 @@ ob_start();
 								<td><?php echo $total ?>.000</td>
 							</tr>
 						</table>
-						<center><a href="dathang.php" class="btn btn-1">Đặt hàng</a></center>
+						<center><a href="Dh.php" class="btn btn-1">Đặt hàng</a></center>
 					</div>
 				</div>
 			</div>

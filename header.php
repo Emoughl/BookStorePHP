@@ -36,7 +36,7 @@ $name ="BS";
 				<div id="logo"><h5 style="font-family: cursive;font-size: 40px;">HML STORE</h5></div>
 			</div>
 			<div class="col-md-4">
-				<form class="form-search" method="GET" action="timkiem.php">  
+				<form class="form-search" method="GET" action="search.php">  
 					<input type="text"  class="input-medium search-query" name="txttimkiem" required style= "margin-top: 13px ; width: 84% ;height: 42px;">  
 					<button type="submit" name="tk" class="btn" style="font-size: 20px;padding: 11px 16px;margin-top: -3px;"><span class="glyphicon glyphicon-search"></span></button>  
 				</form>
@@ -59,33 +59,6 @@ $name ="BS";
 			 if($ok == 2)
 			 {
 				echo count($_SESSION['cart']);
-			 }
-			else
-			{
-				echo   "0";
-			}
-			
-			
-			?>)</a></div>
-			</div>
-		    <div class="col-md-4"style="width: 7%;">
-				<div id="favorite" style="font-size: 28px;margin-top: 14px;"><a class="text" href="favorite.php"><span class="glyphicon glyphicon-heart"></span> (<?php
-			//Yeu Thich
-            $ok=1;
-			 if(isset($_SESSION['favorite']))
-			 {
-				 foreach($_SESSION['favorite'] as $key => $value)
-				 {
-					 if(isset($key))
-					 {
-						$ok=2;
-					 }
-				 }
-			 }
-			
-			 if($ok == 2)
-			 {
-				echo count($_SESSION['favorite']);
 			 }
 			else
 			{

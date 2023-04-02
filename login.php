@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
     require 'inc/myconnect.php';
     $tk = $_POST['txtus'] ;
     $mk = $_POST['txtem'];
-    $sql="SELECT * FROM user  where email = '$tk'  and matkhau = '$mk'";
+    $sql="SELECT * FROM loginuser  where email = '$tk'  and matkhau = '$mk'";
     $result = $conn->query($sql);
     // echo  $mk;
     if($result->num_rows > 0){
