@@ -8,7 +8,7 @@ session_start();
 	include "frist.php"
     ?>
     <?php 
-	include "header.php"
+	include "navigation.php"
 	?>
 	<?php 
 	include "navigation.php"
