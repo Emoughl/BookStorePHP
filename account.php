@@ -11,7 +11,7 @@ session_start();
 	include "header.php"
 	?>
 	<?php 
-	include "navigation.php"
+	include "header.php"
 	?>
 	<?php
 $tk = "" ;
